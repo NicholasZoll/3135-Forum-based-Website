@@ -10,9 +10,28 @@ document.addEventListener("DOMContentLoaded", function() {
     searchItemEvent.addEventListener("keyup", () => {
         searchItems();
     });
+
+
+    $('img')
+    .wrap('<span style="display:inline-block"></span>')
+    .css('display', 'block')
+    .parent()
+    .zoom(); // using the zoom library to allow for zooming in on images when clicked on
 });
 
 
+
+
+
+// Function to apply zoom functionality to images NEWNEW
+function applyZoom() {
+    $('img').each(function() {
+        $(this).wrap('<span style="display:inline-block"></span>')
+               .css('display', 'block')
+               .parent()
+               .zoom();
+    });
+}
 
 function createItemPosting() {
     // getting form values for item title, item description, item price, and item image urls if they are entered
@@ -86,6 +105,8 @@ function createItemPosting() {
         // clears the form by reseting it to default values
         document.getElementById("new-item-form").reset();
     }
+    // Reinitialize the zoom plugin for all images
+    setTimeout(applyZoom, 100);
 }
 
 
@@ -167,6 +188,8 @@ function handleFiles() {
 
         reader.readAsDataURL(file); // used to read the file as a data url
     });
+    
+    setTimeout(applyZoom, 100);
 }
 
 

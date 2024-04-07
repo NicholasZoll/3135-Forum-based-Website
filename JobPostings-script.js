@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+
 function createJobPosting() {
     // getting form values for job title and job description
     let title = document.querySelector("#job-title").value.trim();
@@ -35,6 +36,8 @@ function createJobPosting() {
     
     // clears the form by reseting it to default values
     document.getElementById("new-job-form").reset();
+    
+    toastr.success('Post Submitted Successfully!');
 }
 
 
