@@ -1,0 +1,120 @@
+body {
+    margin: 0; /* Resets default margin, included as it helped with positioning issues I was experiencing  */
+    padding: 0; /* Resets default padding for the body */
+    display: flex;   /* flexbox for layout */
+    flex-direction: column;
+    min-height: 100vh; /* min height is 100 percent of the viewport height */
+    width: 100%; 
+}
+
+header {
+    width: 100vw; /* width is 100 percent of the viewport width */
+}
+
+.navigation-bar {
+    display: flex;
+    justify-content: center; /* center align nav links */
+    background-color: #333; /* background color for nav bar */
+    margin: 0; 
+    padding: 0; 
+    width: 100vw; 
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column; /* arrange flex items in a column */
+    align-items: center;
+    justify-content: center;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.welcome h1 {
+    font-size: 40px;
+}
+
+.welcome p {
+    margin-top: -10px; /* adjusting margin by -10 pixels */
+    text-align: center; /* center align text */
+}
+
+.welcome p a{
+    text-decoration: none;
+    color: forestgreen;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: white;  /* font color is white for the navigation links*/
+    text-align: center;
+    padding: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    width: 160px;
+
+}
+
+.navigation-bar a:hover {
+    background-color: #ddd; /* when hovering over a nav link, its background color changes to white-ish gray*/
+    color: black;   /* text color turns black on hover so it can be read */
+}
+
+.navigation-bar a.active {
+    background-color: #038e2d; /* active page's nav link has green background color to signify that you are on that page */
+    color: white;
+}
+
+.navigation-bar .icon {
+    display: none;
+}
+
+.page-blocks {
+    display: flex;
+    margin-top: 40px; 
+    justify-content: center; 
+    gap: 40px;  /* adding gap between the different page blocks */
+}
+
+.page-block {
+    text-align: center; 
+}
+
+.page-block img {
+    max-width: 100%;
+    width: 250px; 
+    height: auto; /* keeps ratio of image to not distort it */
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* adding slight shadow */
+}
+
+.page-block p {
+    margin-top: 10px; 
+    color: #333;
+    font-size: 20px;
+    text-decoration: underline; /* making each page name underlined for each image block*/
+}
+
+.footer {
+    margin-top: auto; 
+    display: flex;
+    background-color: #333;
+    color: white;
+    justify-content: center; 
+    align-items: center; 
+    height: 35px;
+    width: 100vw;  /* width is 100 percent of the viewport width */
+}
+
+.footer-item {
+    color: white;
+    margin: 20px;
+}
+
+#copyright{
+    color: white;
+    margin-right: auto; /* copyright to the right */
+    margin-left: 0; 
+}
+
+
+
+

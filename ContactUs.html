@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Cosmic Classifieds</title>
+    <link rel="stylesheet" href="ContactUs-style.css">
+</head>
+<body>
+    <header>
+        <!-- Navigation bar for the website -->
+        <nav class="navigation-bar">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="JobPostings.html" class="nav-link">Job Postings</a>
+            <a href="ItemsForSale.html" class="nav-link">Items For Sale</a>
+            <a href="MissedConnections.html" class="nav-link">Missed Connections</a>
+            <a href="ContactUs.html" class="active nav-link">Contact Us</a>
+        </nav>
+    </header>
+    <main>
+        <p id="contact-message">Have questions or concerns? Want to suggest improvements? Let us know here!</p>
+        <!-- flex container -->
+        <div class="flex-container">
+            <!-- div for contact form -->
+            <div class="contact-us">
+                <h2>Contact Us</h2>
+                    <form action="mailto:nzoll@uncc.edu" method="post" id="contact-form" enctype="text/plain"> <!-- sends user's message to my email -->
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required> <!-- required fields -->
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+
+                        <button type="submit">Submit</button> <!-- submission button -->
+                    </form>
+            </div>
+            <!-- div for decorative picture on page -->
+            <div class="contact-picture">
+                <img src="ContactUs3Image.jpg" alt="Contact Us Alien Picture" title="Alien Employee Picture">
+            </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <p id="copyright">&copy; 2024 Zoll</p>
+        <!-- validations -->
+        <a href="https://validator.w3.org/" class="footer-item">Validate HTML</a>
+        <a href="https://jigsaw.w3.org/css-validator/" class="footer-item">Validate CSS</a>
+    </footer>
+</body>
+</html>

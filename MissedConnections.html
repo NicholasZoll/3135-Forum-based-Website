@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missed Connections - Cosmic Classifieds</title>
+    <link rel="stylesheet" href="MissedConnections-style.css">
+</head>
+<body>
+    <header>
+        <!-- Navigation bar for the website -->
+        <nav class="navigation-bar">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="JobPostings.html" class="nav-link">Job Postings</a>
+            <a href="ItemsForSale.html" class="nav-link">Items For Sale</a>
+            <a href="MissedConnections.html" class="active nav-link">Missed Connections</a>
+            <a href="ContactUs.html" class="nav-link">Contact Us</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Flex Container for Flex layout -->
+        <div class="flex-container">
+            <!-- div for the posts on the page, ms abbreviated for missed connections-->
+            <div class="ms-posts">
+                <div class="ms-post"> <!-- example post-->
+                    <h3>Looking for alien named Bibblar</h3>
+                    <p>I met this peculiar looking alien at a gas station on Mars. All that he would say is, "Find Bibblar". Looking to find any more information about this critter. Thanks</p>
+                    <img src="AlienMissed1.jpg" alt="Example Item Image">
+                </div>
+                <div class="ms-post">
+                    <h3>Looking for blue Spaceworm named John</h3>
+                    <p>Looking for a Spaceworm that goes by John, similar to the photo attached. We met in a Plutonian Starbucks on 5th Avenue. I told you to get a haircut.</p>
+                    <img src="AlienMissed2.png" alt="Example Item Image">
+                </div>
+                <div class="ms-post">
+                    <h3>Looking for friends</h3>
+                    <p>Greebo Krinklor is looking for friends. Greebo Krinklor likes to travel, watch sports, and heavy metal music. Greebo is looking forward to meeting you. </p>
+                    <img src="AlienMissed3.jpg" alt="Example Item Image">
+                </div>
+                <div class="ms-post">
+                    <h3>Intergalactic dance group looking for new members</h3>
+                    <p>Newly founded interpretive dance group located on Neptune. Anyone can join! We meet Thursdays and stop by the Pizza Hut on Meteorite R-15 afterwards.</p>
+                    <img src="AlienMissed4.jpg" alt="Example Item Image">
+                </div>
+                <!-- User missed connection postings will be dynamically added here -->
+            </div>
+            <!-- div for the form to create posts on the page -->
+            <div class="ms-form">
+                <h1>Create a New Missed Connection Listing</h1>
+                <form id="new-ms-form" action="#">
+                    <label for="ms-title">Alien Name:</label>
+                    <input type="text" id="ms-title" name="ms-title" minlength="5" maxlength="50" required> <!-- minimum and maximum post title requirements -->
+
+                    <label for="ms-description">Alien Description:</label>
+                    <textarea id="ms-description" name="item-description" rows="4" required maxlength="250"></textarea>
+
+                    <label for="ms-image-url">Image URL:</label>
+                    <input type="text" id="ms-image-url" name="ms-image-url">                    
+
+                    <button type="submit" name="createMSPost" >Post Item</button> <!-- Submission button -->
+                </form>
+                <!-- div for the search feature on the page-->
+                <div class="searchbar-container">
+                    <label for="searchbar">Search by Alien Name:</label>
+                    <input id="searchbar" type="text" name="search" placeholder="Search Alien Name..">
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <p id="copyright">&copy; 2024 Zoll</p>
+        <!-- page validation -->
+        <a href="https://validator.w3.org/" class="footer-item">Validate HTML</a>
+        <a href="https://jigsaw.w3.org/css-validator/" class="footer-item">Validate CSS</a>
+    </footer>
+    <script src="MissedConnections-script.js"></script> <!-- javascript link -->
+</body>
+</html>

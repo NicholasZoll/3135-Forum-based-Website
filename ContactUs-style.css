@@ -1,0 +1,130 @@
+body {
+    margin: 0; /* Resets default margin, included as it helped with positioning issues I was experiencing  */
+    padding: 0; /* Resets default padding for the body */
+    display: flex; /* flexbox for layout */
+    flex-direction: column;
+    min-height: 100vh; /* min height is 100 percent of the viewport height */
+    width: 100%; 
+}
+
+header {
+    width: 100vw; /* width is 100 percent of the viewport width */
+}
+
+.navigation-bar {
+    display: flex;
+    justify-content: center; /* center align nav links */
+    background-color: #333; /* background color for nav bar */
+    margin: 0; 
+    padding: 0; 
+    width: 100vw; 
+}
+
+.nav-link {
+    color: white; /* font color is white for the navigation links*/
+    text-align: center;
+    padding: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    width: 160px;
+
+}
+
+.navigation-bar a:hover {
+    background-color: #ddd; /* when hovering over a nav link, its background color changes to white-ish gray*/
+    color: black; /* text color turns black on hover so it can be read */
+}
+
+.navigation-bar a.active {
+    background-color: #038e2d; /* active page's nav link has green background color to signify that you are on that page */
+    color: white;
+}
+
+.navigation-bar .icon {
+    display: none;
+}
+
+.footer {
+    margin-top: auto; /* pushes the footer to the bottom */
+    display: flex;
+    background-color: #333;
+    color: white;
+    justify-content: center; 
+    align-items: center; 
+    height: 35px;
+    width: 100vw;  /* width is 100 percent of the viewport width */
+}
+
+.footer-item {
+    color: white;
+    margin: 20px;
+}
+
+#copyright{
+    color: white;
+    margin-right: auto; /* push copyright to the right */
+    margin-left: 0; 
+}
+
+#contact-message {
+    font-weight: bold; /* bold font of contact message */
+    font-family: Helvetica, Arial, sans-serif;
+    padding-top: 1%;
+    text-align: center; /* center align the text */
+    color: forestgreen; 
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row; /* arrange flex items in row */
+}
+
+.contact-us {
+    flex: 1; 
+    font-family: Helvetica, Arial, sans-serif;
+    padding-left: 2%;
+    margin-top: 1%;
+    margin-left: 20%;
+    display: flex; 
+    flex-direction: column; 
+    min-height: 400px; /* minimum height 400px */
+}
+
+.contact-us h2{
+    padding-left: 10%;
+}
+
+.contact-us label, .contact-us input, .contact-us textarea {
+    margin-bottom: 10px; /* adds space between form elements */
+    display: block; /* sets display layout to block */
+    font-size: 20px; /* increase font size*/
+}
+
+.contact-picture {
+    flex: 1; 
+    text-align: left; 
+    padding-right: 4%;
+}
+
+.contact-picture img {
+    width: 80%;
+    height: auto; /* auto set height so that the image ratio is maintained */
+    max-width: 100%;  /* max width so image does not exceed container */
+    max-height: 100%; /* max height so image does not exceed container */
+}
+
+button {
+    border: 3px solid #333;
+    background-color: #038e2d;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    width: 20%;
+    border-radius: 4px;
+    cursor: pointer; /* changes cursor to pointer when hovering over the button */
+    padding: 2px;
+}
+
+button:hover {
+    background-color: #03611f; /* makes the background color of the button slightly darker to help show that the button is clickable when hovered over */
+}

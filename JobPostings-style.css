@@ -1,0 +1,169 @@
+body {
+    margin: 0; /* Resets default margin, included as it helped with positioning issues I was experiencing  */
+    padding: 0; /* Resets default padding for the body*/
+    display: flex; /* flexbox for layout */
+    flex-direction: column;
+    min-height: 100vh; /* min height is 100 percent of the viewport height */
+    width: 100%; 
+    overflow-x: hidden;
+}
+
+header {
+    width: 100vw; /* width is 100 percent of the viewport width */
+}
+
+.navigation-bar {
+    display: flex;
+    justify-content: center; /* center align nav links */
+    background-color: #333; /* background color for nav bar */
+    margin: 0; 
+    padding: 0; 
+    width: 100vw; 
+}
+
+.nav-link {
+    color: white; /* text color for each navigation link is white */
+    text-align: center; /* text is center aligned */
+    padding: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none; 
+    width: 160px;
+
+}
+
+.navigation-bar a:hover {
+    background-color: #ddd; /* when hovering over a nav link, its background color changes to white-ish gray*/
+    color: black; /* when hovering over a nav link, text color is set to black for visability */
+}
+
+.navigation-bar a.active {
+    background-color: #038e2d; /* active page's nav-link is green to signify to user that you are on that page */
+    color: white;
+}
+
+.navigation-bar .icon {
+    display: none;
+}
+
+.footer {
+    margin-top: auto; /* pushes the footer to the bottom */
+    display: flex;
+    background-color: #333;
+    color: white;
+    justify-content: center; 
+    align-items: center; 
+    height: 35px;
+    width: 100vw; 
+}
+
+.footer-item {
+    color: white;
+    margin: 20px;
+}
+
+#copyright{
+    color: white;
+    margin-right: auto;  /* push copyright to the right */
+    margin-left: 0; 
+}
+
+
+.flex-container {
+    display: flex;
+    flex-direction: row; 
+}
+
+.job-postings {
+    flex: 1; /* equal to flex 1 1 0 */
+    font-family: Helvetica, Arial, sans-serif;
+    display: flex; 
+    flex-direction: column; /* arrange flex items in a column */
+    
+    overflow-y: auto; /* this adds a vertical scrollbar when content exceeds the max height */
+    padding: 0 2%;
+
+    min-height: 100%;
+    min-width: 70%;
+}
+
+.job-postings h2{
+    padding-top: 4%;
+    text-align: center;
+    padding-bottom: 4%;
+    color: forestgreen;
+
+    text-decoration: underline; /* adding underline to the h2 element */
+}
+
+
+.job-posting-form label, .job-posting-form input, .job-posting-form textarea {
+    margin-bottom: 10px; /* puts 10px margin between posts*/
+    display: block;
+}
+
+.job-posting-form{
+    padding-top: 3%;
+    flex: 1; 
+    align-items: center;
+    justify-content: center;
+    padding-left: 3%;
+    font-family: Helvetica, Arial, sans-serif;
+    color: forestgreen;
+    
+    font-weight: bold; /* font will be bold */
+}
+
+.job-posts {
+    padding-left: 2%;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.job-posts .post-title {
+    font-weight: bold;
+    font-style: oblique;
+    color: forestgreen;
+    
+    text-align: center;
+}
+
+.job-post {
+    border: 3.5px solid #038e2d; /* adding solid green border */
+    border-radius: 8px; /* rounds border corners */
+    padding: 10px; 
+    margin-bottom: 20px; 
+    text-align: center;
+    background-color: #3c3c3c;
+    color: white;
+}
+
+.searchbar-container {
+    margin-top: 20%;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.job-picture img {
+    margin-top: 5%;
+    padding-top: 5%;
+
+    width: 50%;
+    height: auto;
+    max-width: 100%; /* max width so image does not exceed container */
+    max-height: 100%; /* max height so image does not exceed container */
+}
+
+
+button {
+    border: 3px solid #333;
+    background-color: #038e2d;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    width: 25%;
+    border-radius: 4px;
+    cursor: pointer; /* changes cursor to pointer when hovering over the button */
+
+}
+
+button:hover {
+    background-color: #03611f; /* makes the background color of the button slightly darker to help show that the button is clickable when hovered over */
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items For Sale - Cosmic Classifieds</title>
+    <link rel="stylesheet" href="ItemsForSale-style.css">
+</head>
+<body>
+    <header>
+        <!-- Navigation bar for the website -->
+        <nav class="navigation-bar">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="JobPostings.html" class="nav-link">Job Postings</a>
+            <a href="ItemsForSale.html" class="active nav-link">Items For Sale</a>
+            <a href="MissedConnections.html" class="nav-link">Missed Connections</a>
+            <a href="ContactUs.html" class="nav-link">Contact Us</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Flex Container for Flex layout -->
+        <div class="flex-container">
+            <!-- div for item grid style posts -->
+            <div class="item-grid">
+                <div class="item-post"> <!-- example item post -->
+                    <h3>Selling JibJab</h3>
+                    <p>I am moving to another star system and have to get rid of my pet JibJab named Ron. He is potty trained and knows how to knit. He makes wonderful sweaters and blankets. Price negotiable.</p>
+                    <p>Price: N/A</p>
+                    <img src="AlienItem1.jpg" alt="Example Item Image">
+                </div>
+                <div class="item-post">
+                    <h3>Selling Ancient Alien Artifact</h3>
+                    <p>Found this thingy in my brother's attic. Emits a blueish light and beeps whenever I hold it. Not sure what it does, but probably something cool!</p>
+                    <p>Price: 32,000 Galactic Credits</p>
+                    <img src="AlienItem2.jpg" alt="Example Item Image">
+                </div>
+                <div class="item-post">
+                    <h3>Up-for-Adoption Dog</h3>
+                    <p>Dog up for adoption, looking for a new home. Her name is Michaelangelo and she is a pure-bred Plutonian Chihuhua. I have all her papers and show ribbons.</p>
+                    <p>Price: 500 gold pieces</p>
+                    <img src="AlienItem3.jpg" alt="Example Item Image">
+                </div>
+                <div class="item-post">
+                    <h3>Selling Mitsubishi Lancer 9000</h3>
+                    <p>Looking to sell my old space cruiser. Very reliable, it has a mess-hall, 4 doors, and 2 escape pods. The med bay has never been used. Small scratch on rear-view mirror. </p>
+                    <p>Price: 5 hotdogs</p>
+                    <img src="AlienItem4.jpg" alt="Example Item Image">
+                </div>
+                <!--posts will be dynamically added here -->
+            </div>
+            <!-- div for creating item-for-sale posts form -->
+            <div class="item-posting-form">
+                <h1>Create a New Item Listing</h1>
+                <form id="new-item-form" action="#">
+                    <label for="item-title">Item Title:</label>
+                    <input type="text" id="item-title" name="item-title" minlength="5" maxlength="50" required> <!-- minimum and maximum length for item title -->
+                    
+                    <label for="item-description">Item Description:</label>
+                    <textarea id="item-description" name="item-description" rows="4" required maxlength="250"></textarea>
+                    
+                    <label for="item-price">Price:</label>
+                    <input type="text" id="item-price" name="item-price" required> <!-- input type for price is text, since its 'alien' currency -->
+                    
+                    
+                    <label for="item-image-urls">[Optional] Image URLs:<br> (*If multiple URLs, separate by commas*)</label> <!-- note, changed the label's for from item-image to item-image-urls-->
+                    <textarea id="item-image-urls" name="item-image-urls" rows="4"></textarea>
+                    
+                    <!-- Options for submitting image urls, or dragging and dropping images.-->
+                    
+                    <label>[Optional] Drag and drop 0-4 images here if you don't want to use image URLs!:</label>
+                    <span>[Optional] Image 1</span>
+                    <input type="file" id="drag-image1" name="drag-image1" accept="image/*"> 
+                    <span>[Optional] Image 2</span>
+                    <input type="file" id="drag-image2" name="drag-image2" accept="image/*">
+                    <span>[Optional] Image 3</span>
+                    <input type="file" id="drag-image3" name="drag-image3" accept="image/*">
+                    <span>[Optional] Image 4</span>
+                    <input type="file" id="drag-image4" name="drag-image4" accept="image/*">
+                    
+                    
+                    <button type="button" name="createItemSubmit" >Post Item</button> <!-- submission button for posting-->
+                </form>
+                <div class="searchbar-container"> <!-- div for search feature -->
+                    <label for="searchbar">Search by Job Title:</label>
+                    <input id="searchbar" type="text" name="search" placeholder="Search Item Name..">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p id="copyright">&copy; 2024 Zoll</p>
+        <!-- validations -->
+        <a href="https://validator.w3.org/" class="footer-item">Validate HTML</a>
+        <a href="https://jigsaw.w3.org/css-validator/" class="footer-item">Validate CSS</a>
+    </footer>
+    <script src="ItemsForSale-script.js"></script> <!-- javascript link-->
+</body>
+</html>

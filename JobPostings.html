@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Postings - Cosmic Classifieds</title>
+    <link rel="stylesheet" href="JobPostings-style.css">
+</head>
+<body>
+    <header>
+        <!-- Navigation bar for the website -->
+        <nav class="navigation-bar">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="JobPostings.html" class="active nav-link">Job Postings</a>
+            <a href="ItemsForSale.html" class="nav-link">Items For Sale</a>
+            <a href="MissedConnections.html" class="nav-link">Missed Connections</a>
+            <a href="ContactUs.html" class="nav-link">Contact Us</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Flex Container for Flex layout -->
+        <div class="flex-container">
+            <!-- div for the posts on the page -->
+            <div class="job-postings">
+                <h2>Available Job Postings</h2>
+                <div class="job-posts">
+                    <div class="job-post">
+                        <p class="post-title">Alien Linguist</p>
+                        <p class="post-text">Translate alien languages for my silicone-cluster start-up business. Huge benefits and competitive pay.</p>
+                    </div>
+                    <div class="job-post">
+                        <p class="post-title">Glorbon V Gas Station - Attendant</p>
+                        <p class="post-text">Located on Route 99. Must have experience with cleaning all-species restrooms. Pay is around 5 Glorbon coins per hour, depending on experience. Must be able to operate hot dog machine.</p>
+                    </div>
+                    <div class="job-post">
+                        <p class="post-title">Wookie Washer</p>
+                        <p class="post-text">Looking to have someone help me bathe my friend named Chewbacca. Need not be experienced. Will not be liable for injuries. </p>
+                    </div>
+                    <div class="job-post">
+                        <p class="post-title">Babysitter</p>
+                        <p class="post-text"> I need a babysitter for my two kids named Nathaniel and Jeremy ages 5 and 204. Will pay 15 galactic credits for each night. Do not give them sugar past midnight or they will turn into reptilians. Thanks.</p>
+                    </div>
+                    <!-- User job postings will be dynamically added here -->
+                </div>
+            </div>
+            <!-- div for the form to create posts on the page -->
+            <div class="job-posting-form">
+                <h2>Create a New Job Posting</h2>
+                <form id="new-job-form" action="#">
+                    <label for="job-title">Job Title:</label>
+                    <input type="text" id="job-title" name="job-title" minlength="4" maxlength="50" required> <!-- minimum and maximum job title requirements -->
+                    <label for="job-description">Job Description:</label>
+                    <textarea id="job-description" name="job-description" rows="4" required maxlength="250" minlength="20"></textarea>
+                    <button type="submit" name="createJobSubmit">Post Job</button> <!-- Submission button -->
+                </form>
+                <!-- div for the search feature on the page-->
+                <div class="searchbar-container">
+                    <label for="searchbar">Search by Job Title:</label>
+                    <input id="searchbar" type="text" name="search" placeholder="Search Job Titles..">
+                </div>
+                <!-- div for image on page that is used for decoration -->
+                <div class="job-picture">
+                    <img src="AlienJobImage.jpg" alt="Alien Job Hunt Picture" title="Alien Looking For A Job">
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- page footer -->
+    <footer class="footer">
+        <p id="copyright">&copy; 2024 Zoll</p>
+        <!-- page validation -->
+        <a href="https://validator.w3.org/" class="footer-item">Validate HTML</a>
+        <a href="https://jigsaw.w3.org/css-validator/" class="footer-item">Validate CSS</a>
+    </footer>
+    <script src="JobPostings-script.js"></script> <!-- javascript link -->
+</body>
+</html>
