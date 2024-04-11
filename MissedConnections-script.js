@@ -10,6 +10,16 @@ document.addEventListener("DOMContentLoaded", function() {
     searchMSEvent.addEventListener("keyup", () => {
         searchConnections();
     });
+
+    $("#dialog-container").dialog({
+        autoOpen: false, // dialog will not open by default
+        modal: true, // dialog will act like modal, so user cannot interact with the page unless they close dialog
+        buttons: {
+            "OK": function() {
+                $(this).dialog("close"); // closes dialog
+            }
+        }
+    });
 });
 
 
@@ -22,7 +32,7 @@ function createMSPosting() {
     
     // checking if required fields are filled
     if (title === "" || description === "") {
-        alert("Please fill out all required fields.");
+        $("#dialog-container").dialog("open"); // Open the dialog using the container
         return;
     }
     

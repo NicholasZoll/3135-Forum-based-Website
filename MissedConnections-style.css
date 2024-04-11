@@ -9,6 +9,62 @@ body {
     overflow-y: auto;  /* used to allow vertical scrollbar if neccessary */
 }
 
+#dialog-container {
+    display: none; /* Hide container by default */
+}
+
+/* dialog jquery ui customization */
+.ui-dialog {
+    border: 1px solid #333; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px #333; 
+    background-color: #ffffff; 
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    background-color: #038e2d; 
+    border-bottom: 1px solid #333; 
+    border-radius: 5px 5px 0 0; 
+    padding: 10px; 
+}
+
+.ui-dialog .ui-dialog-title {
+    color: #333; 
+    font-size: 16px; 
+    font-weight: bold; 
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    position: absolute; 
+    right: -10%; 
+    top: 10px; 
+    background: none; 
+    border: none; 
+    font-size: 16px; 
+    cursor: pointer; 
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    text-align: right; 
+    padding: 10px; 
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+    margin: 0 23%; 
+    padding: 5px 10px; 
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.ui-dialog .ui-dialog-content {
+    text-align: center; 
+    font-family: Helvetica, Arial, sans-serif;
+    color: red;
+    font-size: larger;
+    font-weight: bold;
+}
+/* end of jquery ui css */
+
 header {
     width: 100vw; /* width is 100 percent of the viewport width */
 }

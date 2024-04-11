@@ -10,9 +10,39 @@ document.addEventListener("DOMContentLoaded", function() {
     searchItemEvent.addEventListener("keyup", () => {
         searchItems();
     });
+
+
+    $('img') //https://plugins.jquery.com/zoom - used this plugin to allow for zooming in on images when clicked
+    .wrap('<span style="display:inline-block"></span>')
+    .parent()
+    .zoom({
+        on: 'click', // zooms in when image is clicked
+        magnify: 1, // zooms in 100% of the image
+        touch: true // lets touch screens use the zoom feature
+    }); 
+
+    //https://plugins.jquery.com/count-chars - used this plugin for showing the number of characters left in the form fields
+    $("#item-description, #item-title, #item-price").countChars({
+        position: "before"
+    })
 });
 
 
+
+
+
+// function to apply zoom to images in posts after they are added to the page
+function applyZoom() {
+    $('img').each(function() {
+        $(this).wrap('<span style="display:inline-block"></span>')
+        .parent()
+        .zoom({
+            on: 'click', // zooms in when image is clicked
+            magnify: 1, // zooms in 100% of the image
+            touch: true // lets touch screens use the zoom feature
+        }); 
+    });
+}
 
 function createItemPosting() {
     // getting form values for item title, item description, item price, and item image urls if they are entered
@@ -86,6 +116,10 @@ function createItemPosting() {
         // clears the form by reseting it to default values
         document.getElementById("new-item-form").reset();
     }
+    // calls applyZoom function to apply zoom to the images in the post after a delay of 100ms
+    setTimeout(applyZoom, 100);
+
+
 }
 
 
@@ -167,6 +201,8 @@ function handleFiles() {
 
         reader.readAsDataURL(file); // used to read the file as a data url
     });
+    // calls applyZoom function to apply zoom to the images in the post after a delay of 200ms
+    setTimeout(applyZoom, 200);
 }
 
 
