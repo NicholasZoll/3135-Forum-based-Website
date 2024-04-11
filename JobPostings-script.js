@@ -37,7 +37,7 @@ function createJobPosting() {
     // clears the form by reseting it to default values
     document.getElementById("new-job-form").reset();
     
-    toastr.success('Post Submitted Successfully!');
+    toastr.success('Post Submitted Successfully!'); //displays success message using toastr
 }
 
 
