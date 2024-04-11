@@ -172,3 +172,10 @@ button {
 button:hover {
     background-color: #03611f;  /* makes the background color of the button slightly darker to help show that the button is clickable when hovered over */
 }
+
+.charsRemaining::before {
+    content: "- ";
+}
+.charsRemaining {
+    font-weight: bold;
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Items For Sale - Cosmic Classifieds</title>
     <link rel="stylesheet" href="ItemsForSale-style.css">
+    
 </head>
 <body>
     <header>
@@ -59,7 +60,7 @@
                     <textarea id="item-description" name="item-description" rows="4" required maxlength="250"></textarea>
                     
                     <label for="item-price">Price:</label>
-                    <input type="text" id="item-price" name="item-price" required> <!-- input type for price is text, since its 'alien' currency -->
+                    <input type="text" id="item-price" name="item-price" required maxlength="25"> <!-- input type for price is text, since its 'alien' currency -->
                     
                     
                     <label for="item-image-urls">[Optional] Image URLs:<br> (*If multiple URLs, separate by commas*)</label> <!-- note, changed the label's for from item-image to item-image-urls-->
@@ -96,7 +97,9 @@
     <script src="ItemsForSale-script.js"></script> <!-- javascript link-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!-- Jquery library -->
     <script src="jquery.zoom.js"></script> <!-- jquery zoom link-->
-    <script src="https://malsup.github.io/jquery.cycle2.js"></script> <!-- jquery cycle2 link-->
+
+    <script type="text/javascript" src="jquery.count-chars.min.js"></script> <!-- jquery Count Chars plugin -->
+    
 
     
 </body>

@@ -21,7 +21,10 @@ document.addEventListener("DOMContentLoaded", function() {
         touch: true // lets touch screens use the zoom feature
     }); 
 
-    
+    //https://plugins.jquery.com/count-chars - used this plugin for showing the number of characters left in the form fields
+    $("#item-description, #item-title, #item-price").countChars({
+        position: "before"
+    })
 });
 
 
