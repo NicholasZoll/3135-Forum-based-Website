@@ -6,6 +6,7 @@ body {
     min-height: 100vh; /* min height is 100 percent of the viewport height */
     width: 100%; 
     overflow-x: hidden; /* used to hide horizontal scrollbar */
+    
 }
 
 header {
@@ -77,6 +78,7 @@ header {
     padding-top: 4%;
     padding-left: 2%;
     overflow-x: auto;
+    overflow-y: auto; /* vertical scrollbar if needed */
 }
 
 .item-post {
@@ -84,7 +86,7 @@ header {
     border-radius: 8px; /* rounded corners for border */
     padding: 10px;
     width: 300px;
-    height: auto;
+    height: 400px; 
     font-family: Helvetica, Arial, sans-serif;
     display: flex;
     flex-direction: column; /* vertical alignment */
