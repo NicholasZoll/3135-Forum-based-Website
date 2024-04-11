@@ -140,11 +140,12 @@ header {
 }
 
 .image-gallery {
-    display: flex;
+    
+    flex-direction: row; /* images are displayed in a row */
     overflow-x: auto; /* horizontal scrollbar for images if neccessary, especially when multiple images are in gallery */
     width: 100%; 
     white-space: nowrap; 
-    
+    scrollbar-color: #038e2d transparent;
 }
 
 .image-gallery img {
