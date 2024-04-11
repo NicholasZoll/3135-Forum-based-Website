@@ -10,20 +10,19 @@ document.addEventListener("DOMContentLoaded", function() {
     searchMSEvent.addEventListener("keyup", () => {
         searchConnections();
     });
-});
 
-$(document).ready(function() {
-    // Initialize dialog using dialog container
     $("#dialog-container").dialog({
-        autoOpen: false, // Dialog will not open automatically
-        modal: true, // Make the dialog modal (overlay background)
+        autoOpen: false, // dialog will not open by default
+        modal: true, // dialog will act like modal, so user cannot interact with the page unless they close dialog
         buttons: {
             "OK": function() {
-                $(this).dialog("close"); // Close the dialog when OK button is clicked
+                $(this).dialog("close"); // closes dialog
             }
         }
     });
 });
+
+
 
 function createMSPosting() {
     // getting form values for title, description, and image URL if applicable

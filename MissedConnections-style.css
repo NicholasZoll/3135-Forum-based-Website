@@ -13,58 +13,57 @@ body {
     display: none; /* Hide container by default */
 }
 
-/* CSS for jQuery UI dialog */
+/* dialog jquery ui customization */
 .ui-dialog {
-    border: 1px solid #ccc; /* Set border */
-    border-radius: 5px; /* Set border radius */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow */
-    background-color: #fff; /* Set background color */
+    border: 1px solid #333; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px #333; 
+    background-color: #ffffff; 
 }
 
 .ui-dialog .ui-dialog-titlebar {
-    background-color: #038e2d; /* Set title bar background color */
-    border-bottom: 1px solid #ccc; /* Add border at bottom */
-    border-radius: 5px 5px 0 0; /* Round top corners */
-    padding: 10px; /* Add padding */
+    background-color: #038e2d; 
+    border-bottom: 1px solid #333; 
+    border-radius: 5px 5px 0 0; 
+    padding: 10px; 
 }
 
 .ui-dialog .ui-dialog-title {
-    color: #333; /* Set title text color */
-    font-size: 16px; /* Set title font size */
-    font-weight: bold; /* Set title font weight */
+    color: #333; 
+    font-size: 16px; 
+    font-weight: bold; 
 }
 
 .ui-dialog .ui-dialog-titlebar-close {
-    position: absolute; /* Position close button */
-    right: -10%; /* Align close button to the right */
-    top: 10px; /* Align close button to the top */
-    background: none; /* Remove background */
-    border: none; /* Remove border */
-    font-size: 16px; /* Set close button font size */
-    cursor: pointer; /* Set cursor to pointer */
-    
+    position: absolute; 
+    right: -10%; 
+    top: 10px; 
+    background: none; 
+    border: none; 
+    font-size: 16px; 
+    cursor: pointer; 
 }
 
 .ui-dialog .ui-dialog-buttonpane {
-    text-align: right; /* Align buttons to the right */
-    padding: 10px; /* Add padding */
+    text-align: right; 
+    padding: 10px; 
 }
 
 .ui-dialog .ui-dialog-buttonpane button {
-    margin: 0 23%; /* Add margin between buttons */
-    
-    padding: 5px 10px; /* Add padding to buttons */
-    font-size: 14px; /* Set button font size */
-    cursor: pointer; /* Set cursor to pointer */
+    margin: 0 23%; 
+    padding: 5px 10px; 
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .ui-dialog .ui-dialog-content {
-    text-align: center; /* Center text within dialog */
+    text-align: center; 
     font-family: Helvetica, Arial, sans-serif;
     color: red;
     font-size: larger;
     font-weight: bold;
 }
+/* end of jquery ui css */
 
 header {
     width: 100vw; /* width is 100 percent of the viewport width */
