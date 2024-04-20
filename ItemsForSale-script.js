@@ -25,6 +25,33 @@ document.addEventListener("DOMContentLoaded", function() {
     $("#item-description, #item-title, #item-price").countChars({
         position: "before"
     })
+
+    //ajax request to get the example item posts from the json file ItemList.json
+    $.ajax({
+        type: "get",
+        url: "ItemList.json",
+        beforeSend: function() { //beforeSend is used to set up the request and replace the default XMLHttpRequest object with a custom one. If it loads slowly, it will display Loading... on the page.
+            $(".item-grid").html("Loading...");
+        },
+        timeout: 10000,
+        dataType: "json"
+    })
+    .done(
+        function(data) {
+            let itemGrid = $('.item-grid').html("");
+            data.itemposts.forEach(function(post) { //loops through the posts in the json file
+                itemGrid.append
+                (`<div class="item-post">
+                <h3>${post.title}</h3>
+                <p>${post.description}</p>
+                <p>Price: ${post.price}</p>
+                <img src="${post.imageUrl}" alt="Example Item Image">
+                </div>`);
+            });
+    })
+    .fail(function(xhr, status, error) { //if the ajax request fails, it will display an error message
+            alert("Error: " + xhr.status + " - " + error);
+    });
 });
 
 
