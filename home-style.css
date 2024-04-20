@@ -115,6 +115,9 @@ header {
     margin-left: 0; 
 }
 
+#hiddenH2 {
+    display: none; /* hides h2 element */
+}
 
 
 
