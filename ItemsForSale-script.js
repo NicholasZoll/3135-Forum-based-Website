@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         type: "get",
         url: "ItemList.json",
         beforeSend: function() { //beforeSend is used to set up the request and replace the default XMLHttpRequest object with a custom one. If it loads slowly, it will display Loading... on the page.
-            $(".item-grid").html("Loading...");
+            $(".item-grid").html("Loading Item Posts through Ajax and JSON...");
         },
         timeout: 10000,
         dataType: "json"
@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>`);
             });
     })
-    .fail(function(xhr, status, error) { //if the ajax request fails, it will display an error message
-            alert("Error: " + xhr.status + " - " + error);
+    .fail(function(xhr, status, error) { //if the ajax request fails, it will display an error message. It seems to not work using local file view, but works on live server. I have read that this is a common occurance for ajax requests viewed locally due to security reasons.
+            alert("Ajax Error: " + xhr.status + " , " + error);
     });
 });
 

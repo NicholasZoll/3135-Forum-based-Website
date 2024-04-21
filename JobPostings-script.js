@@ -10,6 +10,28 @@ document.addEventListener("DOMContentLoaded", function() {
     searchEvent.addEventListener("keyup", () => {
         search();
     });
+
+
+    //ajax request to get the example item posts from the json file ItemList.json
+    $.ajax({
+        type: "get",
+        url: "JobList.json",
+        timeout: 10000,
+        dataType: "json"
+    })
+    .done(
+        function(data) {
+            let jobPosts = $('.job-posts'); //selects the job-posts class
+            data.jobposts.forEach(function(post) { // Loop through the posts in the JSON file
+                jobPosts.append(`<div class="job-post">
+                    <p class="post-title">${post.title}</p>
+                    <p class="post-text">${post.description}</p>
+                </div>`);
+            });
+    })
+    .fail(function(xhr, status, error) { //if the ajax request fails, it will display an error message. It seems to not work using local file view, but works on live server. I have read that this is a common occurance for ajax requests viewed locally due to security reasons.
+            alert("Ajax Error: " + xhr.status + " , " + error);
+    });
 });
 
 
