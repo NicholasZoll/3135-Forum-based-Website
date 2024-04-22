@@ -23,7 +23,7 @@
         <!-- Flex Container for Flex layout -->
         <div class="flex-container">
             <!-- div for the posts on the page -->
-            <div class="job-postings">
+            <div class="job-postings" role="feed">
                 <h2>Available Job Postings</h2>
                 <div class="job-posts">
                     <div class="job-post">
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <!-- div for the form to create posts on the page -->
-            <div class="job-posting-form">
+            <div class="job-posting-form" role="form">
                 <h2>Create a New Job Posting</h2>
                 <form id="new-job-form" action="#">
                     <label for="job-title">Job Title:</label>
@@ -56,12 +56,12 @@
                     <button type="submit" name="createJobSubmit">Post Job</button> <!-- Submission button -->
                 </form>
                 <!-- div for the search feature on the page-->
-                <div class="searchbar-container">
+                <div class="searchbar-container" role="form">
                     <label for="searchbar">Search by Job Title:</label>
                     <input id="searchbar" type="text" name="search" placeholder="Search Job Titles..">
                 </div>
                 <!-- div for image on page that is used for decoration -->
-                <div class="job-picture">
+                <div class="job-picture" role="img">
                     <img src="AlienJobImage.jpg" alt="Alien Job Hunt Picture" title="Alien Looking For A Job">
                 </div>
             </div>
