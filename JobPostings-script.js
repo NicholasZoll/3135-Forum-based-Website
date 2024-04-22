@@ -2,8 +2,10 @@
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    let elem = document.querySelector("button[name='createJobSubmit']");
-    elem.addEventListener("click", createJobPosting);
+    let form = document.getElementById("new-job-form");
+    form.addEventListener("submit", function(event) {
+        createJobPosting(event);
+    });
 
 
     let searchEvent = document.querySelector("input[name='search']");
@@ -36,7 +38,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-function createJobPosting() {
+function createJobPosting(event) {
+    event.preventDefault(); //prevents the default action of the form submission
     // getting form values for job title and job description
     let title = document.querySelector("#job-title").value.trim();
     let description = document.querySelector("#job-description").value.trim();
