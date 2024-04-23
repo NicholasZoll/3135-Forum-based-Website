@@ -2,13 +2,18 @@
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    let form = document.getElementById("new-job-form");
+    let savedPosts = sessionStorage.getItem("jobPosts"); //gets the saved posts from session storage
+    if (savedPosts) { //if there are saved posts, it will display them
+        document.querySelector(".job-posts").innerHTML = savedPosts;
+    }
+
+    let form = document.getElementById("new-job-form"); //selects the form for job posts
     form.addEventListener("submit", function(event) {
         createJobPosting(event);
     });
 
 
-    let searchEvent = document.querySelector("input[name='search']");
+    let searchEvent = document.querySelector("input[name='search']"); //selects the search input field
     searchEvent.addEventListener("keyup", () => {
         search();
     });
@@ -57,8 +62,10 @@ function createJobPosting(event) {
                 '</div>';
     
     // using innerHTML to append new job post 
-    document.querySelector(".job-posts").innerHTML += newPost;
+    document.querySelector(".job-posts").innerHTML = newPost + document.querySelector(".job-posts").innerHTML;
     
+    // saving the job posts to session storage
+    sessionStorage.setItem("jobPosts", document.querySelector(".job-posts").innerHTML);
     // clears the form by reseting it to default values
     document.getElementById("new-job-form").reset();
     
