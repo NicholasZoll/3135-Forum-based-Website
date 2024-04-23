@@ -50,10 +50,10 @@ function createMSPosting() {
                 '</div>';
     
     
-    // using innerHTML to append new job post 
+    // using innerHTML to append new missed connection post 
     document.querySelector(".ms-posts").innerHTML = msPost + document.querySelector(".ms-posts").innerHTML;
     
-    // saving the job posts to session storage
+    // saving the missed connection posts to session storage
     sessionStorage.setItem("mcPosts", document.querySelector(".ms-posts").innerHTML);
 
     // clears the form by reseting it to default values
