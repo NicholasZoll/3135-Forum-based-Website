@@ -30,17 +30,23 @@ document.addEventListener("DOMContentLoaded", function() {
     $.ajax({
         type: "get",
         url: "ItemList.json",
-        beforeSend: function() { //beforeSend is used to set up the request and replace the default XMLHttpRequest object with a custom one. If it loads slowly, it will display Loading... on the page.
-            $(".item-grid").html("Loading Item Posts through Ajax and JSON...");
-        },
         timeout: 10000,
         dataType: "json"
     })
     .done(
         function(data) {
-            let itemGrid = $('.item-grid').html("");
+            let firstPost = data.itemposts[0]; // targets first post in the json file
+            let savedItems = sessionStorage.getItem("iPosts"); //gets the saved posts from session storage
+        
+            // check if the first post already exists in sessionStorage
+            if (savedItems && savedItems.includes(firstPost.title.trim())) {
+                // exit if the first post already exists in sessionStorage, as it signifies json was already loaded
+                applyZoom(); //calls the function to apply zoom to images in posts
+                return;
+            }
+            
             data.itemposts.forEach(function(post) { //loops through the posts in the json file
-                itemGrid.append
+                $('.item-grid').append
                 (`<div class="item-post">
                 <h3>${post.title}</h3>
                 <p>${post.description}</p>
@@ -48,15 +54,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="${post.imageUrl}" alt="Example Item Image">
                 </div>`);
             });
+            // save updated item posts to sessionStorage
+            sessionStorage.setItem("iPosts", $(".item-grid").html());
+            applyZoom(); //calls the function to apply zoom to images in posts
     })
     .fail(function(xhr, status, error) { //if the ajax request fails, it will display an error message. It seems to not work using local file view, but works on live server. I have read that this is a common occurance for ajax requests viewed locally due to security reasons.
             alert("Ajax Error: " + xhr.status + " , " + error);
     });
+
+    displaySavedPosts(); //calls the function to display saved posts from session storage
 });
 
 
 
-
+function displaySavedPosts() {
+    let savedItems = sessionStorage.getItem("iPosts");
+    if (savedItems) {
+        document.querySelector(".item-grid").innerHTML = savedItems;
+    }
+}
 
 // function to apply zoom to images in posts after they are added to the page
 function applyZoom() {
@@ -114,6 +130,8 @@ function createItemPosting() {
         // using innerHTML to append new item post 
         document.querySelector(".item-grid").innerHTML += itemPost;
 
+        // saving the item posts to session storage
+        sessionStorage.setItem("iPosts", document.querySelector(".item-grid").innerHTML);
         // clears the form by reseting it to default values
         document.getElementById("new-item-form").reset();
     }
@@ -140,6 +158,8 @@ function createItemPosting() {
         // using innerHTML to append new item post 
         document.querySelector(".item-grid").innerHTML += itemPost;
 
+        // saving the item posts to session storage
+        sessionStorage.setItem("iPosts", document.querySelector(".item-grid").innerHTML);
         // clears the form by reseting it to default values
         document.getElementById("new-item-form").reset();
     }
@@ -221,6 +241,8 @@ function handleFiles() {
                 // create post by appending it using innerHTML
                 document.querySelector(".item-grid").innerHTML += itemPost;
 
+                // saving the item posts to session storage
+                sessionStorage.setItem("iPosts", document.querySelector(".item-grid").innerHTML);
                 // clearing the form field by resetting it to default
                 document.getElementById("new-item-form").reset();
             }
