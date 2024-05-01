@@ -225,6 +225,7 @@ function handleFiles() {
         '<p>Price: ' + price + '</p>' +
         '<div class="image-gallery">'; // setting up image gallery
 
+    let filesRecieved = 0; // variable to keep track of how many files have been processed
     // looping through each file in files array
     files.forEach((file, index) => {
         const reader = new FileReader(); //creating FileReader object to read file content
@@ -234,8 +235,10 @@ function handleFiles() {
             // setting up img html, using the file's data as the image url and the alt information as the file name
             itemPost += `<img src="${reader.result}" alt="${file.name}">`;
 
+            filesRecieved++; // keeping track of files processed
+            
             // if its the last image, close the div of the gallery and append the post
-            if (index === files.length - 1) {
+            if (filesRecieved === files.length) {
                 itemPost += '</div>'; // end of image gallery div
 
                 // create post by appending it using innerHTML
