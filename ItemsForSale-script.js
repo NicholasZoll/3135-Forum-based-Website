@@ -25,11 +25,54 @@ document.addEventListener("DOMContentLoaded", function() {
     $("#item-description, #item-title, #item-price").countChars({
         position: "before"
     })
+
+    //ajax request to get the example item posts from the json file ItemList.json
+    $.ajax({
+        type: "get",
+        url: "ItemList.json",
+        timeout: 10000,
+        dataType: "json"
+    })
+    .done(
+        function(data) {
+            let firstPost = data.itemposts[0]; // targets first post in the json file
+            let savedItems = sessionStorage.getItem("iPosts"); //gets the saved posts from session storage
+        
+            // check if the first post already exists in sessionStorage
+            if (savedItems && savedItems.includes(firstPost.title.trim())) {
+                // exit if the first post already exists in sessionStorage, as it signifies json was already loaded
+                applyZoom(); //calls the function to apply zoom to images in posts
+                return;
+            }
+            
+            data.itemposts.forEach(function(post) { //loops through the posts in the json file
+                $('.item-grid').append
+                (`<div class="item-post">
+                <h3>${post.title}</h3>
+                <p>${post.description}</p>
+                <p>Price: ${post.price}</p>
+                <img src="${post.imageUrl}" alt="Example Item Image">
+                </div>`);
+            });
+            // save updated item posts to sessionStorage
+            sessionStorage.setItem("iPosts", $(".item-grid").html());
+            applyZoom(); //calls the function to apply zoom to images in posts
+    })
+    .fail(function(xhr, status, error) { //if the ajax request fails, it will display an error message. It seems to not work using local file view, but works on live server. I have read that this is a common occurance for ajax requests viewed locally due to security reasons.
+            alert("Ajax Error: " + xhr.status + " , " + error);
+    });
+
+    displaySavedPosts(); //calls the function to display saved posts from session storage
 });
 
 
 
-
+function displaySavedPosts() {
+    let savedItems = sessionStorage.getItem("iPosts");
+    if (savedItems) {
+        document.querySelector(".item-grid").innerHTML = savedItems;
+    }
+}
 
 // function to apply zoom to images in posts after they are added to the page
 function applyZoom() {
@@ -87,6 +130,8 @@ function createItemPosting() {
         // using innerHTML to append new item post 
         document.querySelector(".item-grid").innerHTML += itemPost;
 
+        // saving the item posts to session storage
+        sessionStorage.setItem("iPosts", document.querySelector(".item-grid").innerHTML);
         // clears the form by reseting it to default values
         document.getElementById("new-item-form").reset();
     }
@@ -113,6 +158,8 @@ function createItemPosting() {
         // using innerHTML to append new item post 
         document.querySelector(".item-grid").innerHTML += itemPost;
 
+        // saving the item posts to session storage
+        sessionStorage.setItem("iPosts", document.querySelector(".item-grid").innerHTML);
         // clears the form by reseting it to default values
         document.getElementById("new-item-form").reset();
     }
@@ -178,6 +225,7 @@ function handleFiles() {
         '<p>Price: ' + price + '</p>' +
         '<div class="image-gallery">'; // setting up image gallery
 
+    let filesRecieved = 0; // variable to keep track of how many files have been processed
     // looping through each file in files array
     files.forEach((file, index) => {
         const reader = new FileReader(); //creating FileReader object to read file content
@@ -187,13 +235,17 @@ function handleFiles() {
             // setting up img html, using the file's data as the image url and the alt information as the file name
             itemPost += `<img src="${reader.result}" alt="${file.name}">`;
 
+            filesRecieved++; // keeping track of files processed
+            
             // if its the last image, close the div of the gallery and append the post
-            if (index === files.length - 1) {
+            if (filesRecieved === files.length) {
                 itemPost += '</div>'; // end of image gallery div
 
                 // create post by appending it using innerHTML
                 document.querySelector(".item-grid").innerHTML += itemPost;
 
+                // saving the item posts to session storage
+                sessionStorage.setItem("iPosts", document.querySelector(".item-grid").innerHTML);
                 // clearing the form field by resetting it to default
                 document.getElementById("new-item-form").reset();
             }
@@ -204,7 +256,5 @@ function handleFiles() {
     // calls applyZoom function to apply zoom to the images in the post after a delay of 200ms
     setTimeout(applyZoom, 200);
 }
-
-
 
 

@@ -1,0 +1,26 @@
+{"itemposts":[
+	{
+        "title": "Selling JibJab",
+        "description": "I am moving to another star system and have to get rid of my pet JibJab named Ron. He is potty trained and knows how to knit. He makes wonderful sweaters and blankets. Price negotiable.",
+        "price": "N/A",
+        "imageUrl": "AlienItem1.jpg"
+	},
+    {
+        "title": "Selling Ancient Alien Artifact",
+        "description": "Found this thingy in my brother's attic. Emits a blueish light and beeps whenever I hold it. Not sure what it does, but probably something cool!",
+        "price": "32,000 Galactic Credits",
+        "imageUrl": "AlienItem2.jpg"
+	},
+	{
+        "title": "Up-for-Adoption Dog",
+        "description": "Dog up for adoption, looking for a new home. Her name is Michaelangelo and she is a pure-bred Plutonian Chihuhua. I have all her papers and show ribbons.",
+        "price": "500 gold pieces",
+        "imageUrl": "AlienItem3.jpg"
+	},
+    {
+        "title": "Selling Mitsubishi Lancer 9000",
+        "description": "Looking to sell my old space cruiser. Very reliable, it has a mess-hall, 4 doors, and 2 escape pods. The med bay has never been used. Small scratch on rear-view mirror.",
+        "price": "5 hotdogs",
+        "imageUrl": "AlienItem4.jpg"
+	}
+]}

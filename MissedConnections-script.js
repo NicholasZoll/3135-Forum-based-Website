@@ -2,6 +2,12 @@
 
 
 document.addEventListener("DOMContentLoaded", function() {
+    let savedMCPosts = sessionStorage.getItem("mcPosts"); //gets the saved posts from session storage
+    if (savedMCPosts) { //if there are saved posts, it will display them
+        document.querySelector(".ms-posts").innerHTML = savedMCPosts;
+    }
+
+
     let elem3 = document.querySelector("button[name='createMSPost']");
     elem3.addEventListener("click", createMSPosting);
 
@@ -43,9 +49,13 @@ function createMSPosting() {
                     '<img src="' + imageUrl + '">' +
                 '</div>';
     
-    // using innerHTML to append new post 
-    document.querySelector(".ms-posts").innerHTML += msPost;
     
+    // using innerHTML to append new missed connection post 
+    document.querySelector(".ms-posts").innerHTML = msPost + document.querySelector(".ms-posts").innerHTML;
+    
+    // saving the missed connection posts to session storage
+    sessionStorage.setItem("mcPosts", document.querySelector(".ms-posts").innerHTML);
+
     // clears the form by reseting it to default values
     document.getElementById("new-ms-form").reset();
 }
