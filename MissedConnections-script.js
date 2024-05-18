@@ -8,9 +8,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
-    let elem3 = document.querySelector("button[name='createMSPost']");
-    elem3.addEventListener("click", createMSPosting);
+    //let elem3 = document.querySelector("button[name='createMSPost']");
+    //elem3.addEventListener("click", createMSPosting);
 
+    let elem3 = document.getElementById("new-ms-form"); //selects the form for missed connection posts
+    elem3.addEventListener("submit", function(event) {
+        createMSPosting(event);
+    });
 
     let searchMSEvent = document.querySelector("input[name='search']");
     searchMSEvent.addEventListener("keyup", () => {
@@ -30,7 +34,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-function createMSPosting() {
+function createMSPosting(event) {
+    event.preventDefault(); //prevents the default action of the form submission
     // getting form values for title, description, and image URL if applicable
     let title = document.querySelector("#ms-title").value.trim();
     let description = document.querySelector("#ms-description").value.trim();

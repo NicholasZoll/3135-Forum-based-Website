@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("Ajax Error: " + xhr.status + " , " + error);
     });
 
-    displaySavedPosts(); //calls the function to display saved posts from session storage
+    displaySavedPosts(); //calls the function to display saved posts from sessionStorage
 });
 
 
